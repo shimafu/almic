@@ -118,7 +118,32 @@ button.submit-btn{margin-top:18px;width:100%;padding:16px;border:none;border-rad
 
 <div id="lowongan" class="section">
   <button class="back-btn" onclick="goHome()">← Kembali</button>
-  <h2 class="gold-text">📋 Lowongan Admin Proyek</h2>
+  <h2 class="gold-text">📋 Lowongan Admin</h2>
+
+  <div class="card">
+    <h3 style="text-align:center">🧾 Deskripsi Pekerjaan</h3>
+    <ul>
+      <li>Mengelola administrasi kantor & operasional</li>
+      <li>Menginput & merapikan data / laporan</li>
+      <li>Mengelola arsip dokumen & berkas</li>
+      <li>Koordinasi dengan tim & klien</li>
+      <li>Menyiapkan invoice, surat, & kebutuhan administrasi</li>
+      <li>Membantu aktivitas harian perusahaan</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3 style="text-align:center">✅ Kualifikasi</h3>
+    <ul>
+      <li>Minimal D3 / S1</li>
+      <li>Mampu menggunakan Excel & Word</li>
+      <li>Teliti, rapi, & komunikatif</li>
+      <li>Mampu bekerja secara individu maupun tim</li>
+      <li>Memiliki attitude & tanggung jawab kerja yang baik</li>
+      <li>Pengalaman admin menjadi nilai tambah</li>
+    </ul>
+  </div>
+
   <div class="form-box">
     <input id="nama" placeholder="Nama Lengkap">
     <input id="hp" placeholder="No. HP / WhatsApp">
@@ -154,7 +179,7 @@ function kirimWA(){
   const email=document.getElementById('email').value;
   const pengalaman=document.getElementById('pengalaman').value;
 
-  const text=`Halo, saya ingin melamar sebagai Admin Proyek.%0A%0A`+
+  const text=`Halo, saya ingin melamar sebagai Admin.%0A%0A`+
              `Nama: ${nama}%0A`+
              `No. HP: ${hp}%0A`+
              `Email: ${email}%0A`+
