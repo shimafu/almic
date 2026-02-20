@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ALMic Property & Projaya Teknik</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+
+body{
+  background:#fff;
+  overflow:hidden;
+}
+
+
+/* GOLD */
+.gold-text{
+  background:linear-gradient(90deg,#d4af37,#f6e27a,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+
+/* HOME (FIX CENTER) */
+.main-page{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:#fff;
+  transition:.6s ease;
+}
+
+
+.main-page.blur{
+  filter:blur(10px);
+  opacity:0;
+  transform:scale(1.05);
+}
+
+
+.home-content{
+  max-width:900px;
+  padding:20px;
+}
+
+
+.main-page h1{
+  font-size:46px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+
+.main-page p{
+  color:#666;
+  margin-bottom:45px;
+}
+
+
+/* BUTTONS */
+.choice-container{
+  display:flex;
+  gap:25px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+
+.choice-btn{
+  padding:20px 55px;
+  border:none;
+  border-radius:60px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  font-size:16px;
+}
+
+
+.choice-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+}
+
+
+.choice-rumah{
+  background:linear-gradient(135deg,#1e40af,#3b82f6,#60a5fa);
+  color:#fff;
+}
+
+
+.choice-mesin{
+  background:linear-gradient(135deg,#c2410c,#f97316,#fb923c);
+  color:#fff;
+}
+
+
+/* SECTION */
+.section{
+  position:fixed;
+  inset:0;
+  height:100vh;
+  padding:110px 20px 60px;
+  overflow-y:auto;
+  transform:translateY(60px);
+  opacity:0;
+  filter:blur(15px);
+  transition:.6s ease;
+  z-index:10;
+  pointer-events:none;
+}
+
+
+.section.active{
+  transform:translateY(0);
+  opacity:1;
+  filter:blur(0);
+  pointer-events:auto;
+}
+
+
+/* THEMES */
+#rumah{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb,#60a5fa);
+  color:#fff;
+}
+
+
+#mesin{
+  background:linear-gradient(135deg,#7c2d12,#c2410c,#f97316,#fb923c);
+  color:#fff;
+}
+
+
+/* BACK BTN */
+.back-btn{
+  position:fixed;
+  top:25px;
+  left:25px;
+  padding:12px 26px;
+  border:none;
+  border-radius:40px;
+  background:#111;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  z-index:20;
+}
+
+
+/* CARD */
+.card{
+  max-width:1000px;
+  margin:25px auto;
+  padding:30px;
+  border-radius:24px;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(20px);
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+
+ul{margin-left:18px;margin-top:10px}
+li{margin-bottom:8px}
+
+
+/* GRID */
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  max-width:1000px;
+  margin:25px auto;
+}
+
+
+.price-box{
+  padding:25px;
+  border-radius:22px;
+  background:rgba(255,255,255,.14);
+  text-align:center;
+  box-shadow:0 15px 45px rgba(0,0,0,.35);
+}
+
+
+/* WA */
+.wa-float{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  z-index:30;
+}
+
+
+.wa-float img{width:30px}
+
+
+@media(max-width:768px){
+  .main-page h1{font-size:30px}
+}
+</style>
+</head>
+<body>
+
+
+<!-- HOME -->
+<div class="main-page" id="home">
+  <div class="home-content">
+    <h1 class="gold-text">ALMic Property & Projaya Teknik</h1>
+    <p>Elite Property Investment & Construction Equipment</p>
+
+
+    <div class="choice-container">
+      <button class="choice-btn choice-rumah" onclick="openSection('rumah')">
+        ALMic Property
+      </button>
+      <button class="choice-btn choice-mesin" onclick="openSection('mesin')">
+        Projaya Teknik
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- RUMAH -->
+<div id="rumah" class="section">
+  <button class="back-btn" onclick="goHome()">← Kembali</button>
+  <h2 class="gold-text" style="text-align:center;margin-bottom:30px">
+    🏠 Properti Kost / Penginapan
+  </h2>
+
+
+  <div class="card">
+    <p><strong>💰 Harga:</strong> 1,9 M | SHM</p>
+    <p><strong>📍 Lokasi:</strong> Jl. Selam 5</p>
+  </div>
+
+
+  <div class="card">
+    <h3 style="text-align:center">Detail</h3>
+    <ul>
+      <li><span id="counter">0</span> kamar ready</li>
+      <li>Potensi hingga ±50 kamar</li>
+      <li>Ruang kantor / toko</li>
+      <li>Paviliun 2 KT + WC + AC + WiFi</li>
+      <li>Garasi | CCTV | Access Card</li>
+    </ul>
+  </div>
+
+
+  <div class="price-grid">
+    <div class="price-box"><h3>Bulanan</h3><p>500 rb – 2,5 jt</p></div>
+    <div class="price-box"><h3>Harian</h3><p>Mulai 75.000</p></div>
+    <div class="price-box"><h3>Ruang Usaha</h3><p>Mulai 150 rb</p></div>
+  </div>
+</div>
+
+
+<!-- MESIN -->
+<div id="mesin" class="section">
+  <button class="back-btn" onclick="goHome()">← Kembali</button>
+  <h2 class="gold-text" style="text-align:center;margin-bottom:30px">
+    🚧 Sewa Alat Proyek
+  </h2>
+
+
+  <div class="card">
+    <ul>
+      <li>Molen</li>
+      <li>Vibrator</li>
+      <li>Genset</li>
+      <li>Stamper</li>
+      <li>Steger / Scaffolding</li>
+    </ul>
+  </div>
+
+
+  <div class="card" style="text-align:center">
+    <p>✨ Bisa sewa + operator</p>
+    <p><strong>💵 Fee operator 200rb</strong></p>
+  </div>
+</div>
+
+
+<!-- WA -->
+<a href="https://wa.me/6282117205587" class="wa-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
+
+
+<script>
+let activeSection = null;
+const home = document.getElementById("home");
+
+
+function openSection(id){
+  const section = document.getElementById(id);
+
+
+  home.classList.add("blur");
+
+
+  setTimeout(()=>{
+    section.classList.add("active");
+    activeSection = section;
+  }, 200);
+
+
+  if(id === "rumah") startCounter();
+}
+
+
+function goHome(){
+  if(!activeSection) return;
+
+
+  activeSection.classList.remove("active");
+
+
+  setTimeout(()=>{
+    home.classList.remove("blur");
+    activeSection = null;
+  }, 300);
+}
+
+
+function startCounter(){
+  let count = 0;
+  const target = 17;
+  const el = document.getElementById("counter");
+
+
+  el.textContent = 0;
+
+
+  const interval = setInterval(()=>{
+    count++;
+    el.textContent = count;
+    if(count >= target) clearInterval(interval);
+  }, 60);
+}
+</script>
+
+
+</body>
+</html>
